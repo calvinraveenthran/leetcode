@@ -2,7 +2,6 @@ package main.test;
 
 import main.java.BuySellStock2;
 import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 
 public class BuySellStock2Test {
