@@ -1,18 +1,18 @@
 package main.test;
-import main.java.DeleteNode;
-import main.java.DeleteNode.ListNode;
+import main.java.RemoveNthNode;
+import main.java.RemoveNthNode.ListNode;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class DeleteNodeTest {
+public class RemoveNthNodeTest {
 
     @Test
     public void test1(){
 
-        DeleteNode dn = new DeleteNode();
+        RemoveNthNode dn = new RemoveNthNode();
 
         int[] value = {1,2,3,4,5};
-        int[] answer = {2,3,4,5};
+        int[] answer = {1,2,3,5};
         ListNode head = new ListNode(1);
         ListNode node_iter = head;
 
@@ -21,7 +21,7 @@ public class DeleteNodeTest {
             node_iter = node_iter.next;
         }
         assertArrayEquals(dn.returnArray(head), value);
-        dn.deleteNode(head);
+        head = dn.removeNthFromEnd(head, 2);
         assertArrayEquals(dn.returnArray(head), answer);
     }
 }
