@@ -37,7 +37,7 @@ public class ReverseLinkedList {
 
         if(head == null)
             return null;
-        
+
         return reverseLinkedListRecursively(head, head, null);
     }
 
