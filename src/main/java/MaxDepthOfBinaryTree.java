@@ -46,14 +46,14 @@ public class MaxDepthOfBinaryTree {
     }
 
 
-    public TreeNode buildTreeFromArrayList(int[] treeAsArray, int start, int end) {
+    public TreeNode buildTreeFromArray(int[] treeAsArray, int start, int end) {
         if (start > end) {
             return null;
         }
         int mid = (start + end) / 2;
         TreeNode node = new TreeNode(treeAsArray[mid]);
-        node.left = buildTreeFromArrayList(treeAsArray, start, mid - 1);
-        node.right = buildTreeFromArrayList(treeAsArray, mid + 1, end);
+        node.left = buildTreeFromArray(treeAsArray, start, mid - 1);
+        node.right = buildTreeFromArray(treeAsArray, mid + 1, end);
         return node;
     }
 
