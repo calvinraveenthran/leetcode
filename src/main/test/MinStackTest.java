@@ -18,7 +18,4 @@ public class MinStackTest {
         ms.pop();
         assertEquals(ms.getMin(), 2);
     }
-
-
-
 }
