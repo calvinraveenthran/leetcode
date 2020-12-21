@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 import main.java.PascalsTriangle;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class PascalsTriangleTest {
