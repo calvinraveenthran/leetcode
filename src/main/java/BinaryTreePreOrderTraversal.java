@@ -1,7 +1,10 @@
 package main.java;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.*;
 
-public class BinaryTreeInOrderTraversal {
+public class BinaryTreePreOrderTraversal {
 
     public static class TreeNode {
         public int val;
@@ -16,7 +19,7 @@ public class BinaryTreeInOrderTraversal {
         }
     }
 
-    public List<Integer> inorderTraversalIterative(TreeNode root) {
+    public List<Integer> preorderTraversalIterative(TreeNode root) {
 
         Stack<TreeNode> treeStack = new Stack<>();
         TreeNode current = root;
@@ -25,20 +28,20 @@ public class BinaryTreeInOrderTraversal {
 
         while(current != null || !treeStack.isEmpty()){
 
-            while(current != null){
+            while(current != null) {
                 treeStack.push(current);
+                answer.add(current.val);
                 current = current.left;
             }
 
             current = treeStack.pop();
-            answer.add(current.val);
             current = current.right;
         }
 
         return answer;
     }
 
-    public List<Integer> inorderTraversalRecursive(TreeNode root) {
+    public List<Integer> preorderTraversalRecursive(TreeNode root) {
 
         List<Integer> answer = new ArrayList<Integer>();
         TreeNode current = root;
@@ -54,8 +57,8 @@ public class BinaryTreeInOrderTraversal {
             return;
         }
 
-        appendToList(current.left,  answer);
         answer.add(current.val);
+        appendToList(current.left,  answer);
         appendToList(current.right,  answer);
     }
 }
