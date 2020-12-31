@@ -2,7 +2,6 @@ package main.test;
 import main.java.OddEvenLinkedList;
 import main.java.OddEvenLinkedList.ListNode;
 import org.junit.Test;
-import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class OddEvenLinkedListTest {
