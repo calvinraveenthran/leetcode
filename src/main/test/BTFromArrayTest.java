@@ -35,4 +35,20 @@ public class BTFromArrayTest {
         assertEquals(13, root.right.right.left.val);
         assertEquals(15, root.right.right.right.val);
     }
+
+    @Test
+    public void test2(){
+        BTFromArray bt = new BTFromArray();
+        int[] preorder = {3,9,20,15,7};
+        int[] inorder = {9,3,15,20,7};
+
+
+
+        TreeNode root = bt.buildTree(preorder, inorder);
+        assertEquals(3, root.val);
+        assertEquals(9, root.left.val);
+        assertEquals(20, root.right.val);
+        assertEquals(15, root.right.left.val);
+        assertEquals(7, root.right.right.val);
+    }
 }

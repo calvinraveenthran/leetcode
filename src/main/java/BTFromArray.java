@@ -20,15 +20,16 @@ public class BTFromArray {
         }
     }
 
+    static int startPo;
+
     public TreeNode buildTree(int[] preorder, int[] inorder) {
 
         int startIo = 0;
         int endIo = preorder.length-1;
-        int startPo = 0;
+        startPo = 0;
 
             TreeNode root = constructSubtree(startIo,
                     endIo,
-                    startPo,
                     preorder,
                     inorder);
             return root;
@@ -36,7 +37,6 @@ public class BTFromArray {
 
     public TreeNode constructSubtree(int startIo,
                                      int endIo,
-                                     int startPo,
                                      int[] preorder,
                                      int[] inorder){
 
@@ -52,8 +52,9 @@ public class BTFromArray {
         }
 
         TreeNode current = new TreeNode(inorder[i]);
-        current.left = constructSubtree(startIo, i-1, startPo+1, preorder, inorder);
-        current.right = constructSubtree(i+1, endIo, i+1, preorder, inorder);
+        startPo=startPo+1;
+        current.left = constructSubtree(startIo, i-1, preorder, inorder);
+        current.right = constructSubtree(i+1, endIo, preorder, inorder);
 
         return current;
     }
