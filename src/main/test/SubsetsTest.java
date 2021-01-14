@@ -8,9 +8,9 @@ public class SubsetsTest {
 
     @Test
     public void test1(){
-        int[] nums = {1,2,3};
+        int[] nums = {1,2,3,4,5,6};
         Subsets s = new Subsets();
         List<List<Integer>> answer = s.subsets(nums);
-        assertEquals(8, answer.size());
+        assertEquals(64, answer.size());
     }
 }
