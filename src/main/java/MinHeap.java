@@ -66,6 +66,13 @@ public class MinHeap {
     }
 
     public int extractMin() {
+        if(size ==1) {
+            int min = heap[1];
+            heap[1] = 0;
+            size = size-1;
+            return min;
+        }
+
         int min = heap[1];
         heap[1] = heap[size];
         size = size-1;

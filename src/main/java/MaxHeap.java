@@ -66,6 +66,13 @@ public class MaxHeap {
     }
 
     public int extractMax() {
+        if(size ==1) {
+            int max = heap[1];
+            heap[1] = 0;
+            size = size-1;
+            return max;
+        }
+
         int max = heap[1];
         heap[1] = heap[size];
         size = size-1;
