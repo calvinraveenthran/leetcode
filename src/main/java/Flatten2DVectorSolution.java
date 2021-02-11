@@ -15,8 +15,6 @@ public class Flatten2DVectorSolution {
         for (int i=0; i < v.length; i++) {
             if(v[i].length > 0) {
                 arrayList.add(Arrays.stream(v[i]).boxed().collect(Collectors.toList()));
-            } else {
-                arrayList.add(new ArrayList<Integer>());
             }
         }
         this.arrayIterator = arrayList.iterator();
@@ -36,14 +34,10 @@ public class Flatten2DVectorSolution {
             return true;
         }
 
-        boolean found = false;
-        while(!found && this.arrayIterator.hasNext()) {
-            List<Integer> temp = this.arrayIterator.next();
-            if(temp.size() > 0) {
-                this.digitIterator = temp.iterator();
-                return true;
-            }
+        if(this.arrayIterator.hasNext()) {
+            this.digitIterator = this.arrayIterator.next().iterator();
+            return true;
         }
-       return found;
+       return false;
     }
 }
