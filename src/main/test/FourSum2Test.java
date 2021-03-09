@@ -14,7 +14,6 @@ public class FourSum2Test {
         FourSum2 f = new FourSum2();
 
         assertEquals(2, f.fourSumCount(a,b,c,d));
-
     }
 
 }
