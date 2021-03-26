@@ -32,7 +32,7 @@ public class MergeKListsTest {
         expected.next.next.next.next = new ListNode(4);
         expected.next.next.next.next.next = new ListNode(4);
         expected.next.next.next.next.next.next = new ListNode(5);
-        expected.next.next.next.next.next.next.next = new ListNode(6);
+        expected.next.next.next.next.next.next.next = new ListNode(6, null);
 
 
         ListNode expe_curr = expected;
