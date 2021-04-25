@@ -12,5 +12,4 @@ public class FriendCirclesTest {
         assertEquals(3, fc.findCircleNum(input));
     }
 
-
 }
