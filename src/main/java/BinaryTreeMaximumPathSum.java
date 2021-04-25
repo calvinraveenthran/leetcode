@@ -16,7 +16,6 @@ public class BinaryTreeMaximumPathSum {
     }
 
     public int maxPathSum(TreeNode root) {
-        // 0=maxValue, 1=currentValue, 2=isLocal
         int[] record = {Integer.MIN_VALUE, 0};
         int[] answer = countSubTree(root, record);
         return answer[0];
@@ -28,11 +27,10 @@ public class BinaryTreeMaximumPathSum {
             return new int[]{};
         }
 
-        int[] val = {record[0], record[1]};
 
-        int[] valLeft =  countSubTree(current.left, val);
+        int[] valLeft =  countSubTree(current.left, record);
 
-        int[] valRight = countSubTree(current.right, val);
+        int[] valRight = countSubTree(current.right, record);
 
         int currLeft = valLeft.length == 0 ? current.val : valLeft[1] + current.val;
         int currRight = valRight.length == 0 ? current.val  : valRight[1]+ current.val ;
